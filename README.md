@@ -1,2 +1,3 @@
 # cursando
-app de cursos MEAN
+app de cursos MEAN para cursos online
+
