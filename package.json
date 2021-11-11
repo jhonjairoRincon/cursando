@@ -1,0 +1,29 @@
+{
+  "name": "cursando",
+  "version": "1.0.0",
+  "description": "app de cursos MEAN para cursos online",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jhonjairoRincon/cursando.git"
+  },
+  "keywords": [],
+  "author": "Jhon Jairo Rincón",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jhonjairoRincon/cursando/issues"
+  },
+  "homepage": "https://github.com/jhonjairoRincon/cursando#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^5.3.4",
+    "express-session": "^1.17.2",
+    "method-override": "^3.0.0",
+    "mongoose": "^6.0.12",
+    "passport": "^0.5.0",
+    "passport-local": "^1.0.0"
+  }
+}
