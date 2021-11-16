@@ -1,21 +1,34 @@
 const cursos = {}
 
 const curso = require('../models/cursos')
-
+//filtrar 
 cursos.listarCurso = async (req,res)=>{
-    await res.send('listar curso')
+    const cursodb = await curso.findById(req.params.id)
+    res.send(cursodb)
+
 };
+//listar
 cursos.listarCursos = async (req,res)=>{
     const cursosdb = await curso.find()
     res.json(cursosdb)
 };
+// crear 
 cursos.CrearCurso = async(req,res)=>{
     const newCurso = new curso(req.body)
     await newCurso.save()
-    res.send("curso creado")
+    res.send({message: 'curso creado'})
 };
-cursos.ActualizarCurso = (req,res)=>{};
-cursos.EliminarCurso = (req,res)=>{};
+//actualizar
+cursos.ActualizarCurso = async(req,res)=>{
+     await curso.findByIdAndUpdate(req.params.id, req.body)
+     res.json({status: 'curso actualizado'})
+
+};
+//aliminar
+cursos.EliminarCurso = async (req,res)=>{
+    curso.findByIdAndDelete(req.params.id)
+    res.json({status: 'curso eliminado'})
+};
 
 
 module.exports = cursos;

@@ -4,7 +4,7 @@
   "description": "app de cursos MEAN para cursos online",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon backend/src/index.js"
+    "dev": "nodemon ./src/index.js"
   },
   "repository": {
     "type": "git",

@@ -1,5 +1,5 @@
 const db = require('./database');
-const app = require('./server');
+const app = require('./app');
 
 
 app.listen(app.get('port'));
