@@ -1,6 +1,7 @@
+const curso = require('../models/cursosModels')
+
 const cursos = {}
 
-const curso = require('../models/cursos')
 //filtrar 
 cursos.listarCurso = async (req,res)=>{
     const cursodb = await curso.findById(req.params.id)
