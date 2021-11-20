@@ -15,7 +15,7 @@ const userSchema = new Schema({
         required: true
     },
     roles:[{
-        ref: 'roles',
+        ref: 'Rol',
         type: Schema.Types.ObjectId,
 
     }]
@@ -31,7 +31,7 @@ userSchema.statics.encryptPassword = async (password) => {
     return await bcrypt.hash(password, salt);
   };
 //metodo para comparar la contraseña
-userSchema.methods.comparePassword = async(password, recivedPAssword) =>{
+userSchema.statics.comparePassword = async(password, recivedPAssword) =>{
     return await bcrypt.compare(password, recivedPAssword )
 
 }

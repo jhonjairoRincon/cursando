@@ -31,5 +31,11 @@ cursos.EliminarCurso = async (req,res)=>{
     res.json({status: 'curso eliminado'})
 };
 
+//agregar cursos
+
+cursos.agregarcurso = async (req,res) =>{
+    
+}
+
 
 module.exports = cursos;
