@@ -1,7 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { EstudianteComponent } from './components/estudiante/estudiante.component';
 import { LadingComponent } from './components/lading/lading.component';
 import { SinginComponent } from './components/singin/singin.component';
+import { SingupComponent } from './components/singup/singup.component';
+
+import { AuthGuard } from './auth.guard'
 
 const routes: Routes = [
   {
@@ -11,6 +15,15 @@ const routes: Routes = [
   {
     path: "singIn",
     component: SinginComponent
+  },
+  {
+    path: "singUp",
+    component: SingupComponent
+  },
+  {
+    path: "estudiante",
+    component: EstudianteComponent,
+    canActivate : [AuthGuard]
   }
 
 ];

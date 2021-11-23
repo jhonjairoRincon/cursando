@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms'
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -7,6 +9,11 @@ import { CursoComponent } from './components/curso/curso.component';
 import { HeaderComponent } from './components/header/header.component';
 import { LadingComponent } from './components/lading/lading.component';
 import { SinginComponent } from './components/singin/singin.component';
+import { SingupComponent } from './components/singup/singup.component';
+import { EstudianteComponent } from './components/estudiante/estudiante.component';
+
+import { AuthGuard } from './auth.guard';
+import { TokenInterceptorService } from './interseptor.guard';
 
 
 @NgModule({
@@ -16,13 +23,24 @@ import { SinginComponent } from './components/singin/singin.component';
     HeaderComponent,
     LadingComponent,
     SinginComponent,
+    SingupComponent,
+    EstudianteComponent,
  
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    AuthGuard,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptorService,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

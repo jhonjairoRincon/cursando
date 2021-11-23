@@ -1,14 +1,19 @@
 
-<nav class="navbar navbar-dark bg-dark">
+<nav class="navbar navbar-dark bg-dark mb-4">
   <div class="container-fluid">
     <a class="navbar-brand">CURSANDO</a>
     <div class="d-flex">
       <form class="d-flex">
         <input class="form-control me-2" type="search" placeholder="Search " aria-label="Search">
-        <button class="btn btn-primary" type="submit">Search</button>
+        <button class="btn btn-primary">Search</button>
       </form>
-        <a class="nav-link p-1" routerLink="/singIn">Sing in </a>
-        <a class="nav-link p-1" href="#">Sing up</a>
+        <ng-container *ngIf ="!authService.loggedIn(); else loggetIn" >
+          <a class="nav-link p-1" style = "color: aliceblue; "routerLink="/singIn">Sing in </a>
+          <a class="nav-link p-1"  style = "color: aliceblue;" routerLink="/singUp">Sing up</a>
+        </ng-container>
+        <ng-template #loggetIn>
+          <a class="nav-link p-1" style = "color: aliceblue;" (click)="authService.logout()" routerLink="/singIn">logout</a>
+        </ng-template>
  
     </div>
   </div>
