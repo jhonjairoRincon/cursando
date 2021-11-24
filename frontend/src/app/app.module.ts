@@ -12,6 +12,7 @@ import { SinginComponent } from './components/singin/singin.component';
 import { SingupComponent } from './components/singup/singup.component';
 import { EstudianteComponent } from './components/estudiante/estudiante.component';
 
+
 import { AuthGuard } from './auth.guard';
 import { TokenInterceptorService } from './interseptor.guard';
 

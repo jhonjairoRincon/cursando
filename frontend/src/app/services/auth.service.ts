@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 import { Router } from '@angular/router'
+import { User } from '../models/userSingin.model';
 
 
 @Injectable({
@@ -9,6 +10,7 @@ import { Router } from '@angular/router'
 export class AuthService {
 
   private url = 'http://localhost:8000/api'
+  
   constructor(
     private http : HttpClient,
     private router : Router
@@ -31,7 +33,7 @@ export class AuthService {
   }
   logout(){
     localStorage.removeItem('token')
-
+    this.router.navigate(['/singIn'])
   }
   
 }
