@@ -21,13 +21,14 @@ export class AuthService {
 
   }
   singIn(user: any){
+    
     return this.http.post<any>(this.url + "/auth/login",user)
-
   }
 
   loggedIn(){
-    return !!localStorage.getItem('token')
-  }
+    
+      return localStorage.getItem('token')  
+    }
   getToken(){
     return localStorage.getItem('token');
   }

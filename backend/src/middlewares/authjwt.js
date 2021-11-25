@@ -25,7 +25,10 @@ verifyToken.verify = async (req,res,next)=>{
 
 verifyToken.isEstudiante = async(req,res,next) =>{
     const User =  await user.findById(req.userId)
-    const roles = await Role.find({_id: {$in: User.roles}})
+    const Roles = await Role.find({_id: {$in: User.roles}})
+    console.log(Roles[0].name)
+    if(Roles[0].name != "estudiante") return res.json({message:'no tienes suficientes permisos'})
+
     next()
 }
 verifyToken.isinstructor = async(req,res,next) =>{

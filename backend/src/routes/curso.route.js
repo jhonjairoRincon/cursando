@@ -8,8 +8,8 @@ router.get('/', cursos.listarCursos);
 router.post('/', [verify.verify, verify.isinstructor], cursos.CrearCurso);
 //router.post('/', cursos.agregarcurso);
 router.get('/:id', cursos.listarCurso);
-router.put('/:id', cursos.ActualizarCurso);
-router.delete('/:id', cursos.EliminarCurso);
+router.put('/:id',[verify.verify, verify.isinstructor], cursos.ActualizarCurso);
+router.delete('/:id',[verify.verify, verify.isinstructor], cursos.EliminarCurso);
 
 
 module.exports = router;

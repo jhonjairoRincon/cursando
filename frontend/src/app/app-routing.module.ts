@@ -23,7 +23,7 @@ const routes: Routes = [
   {
     path: "estudiante",
     component: EstudianteComponent,
-    canActivate : [AuthGuard]
+    canActivate :[AuthGuard]
   }
 
 ];

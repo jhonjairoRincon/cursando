@@ -12,9 +12,8 @@ import { SinginComponent } from './components/singin/singin.component';
 import { SingupComponent } from './components/singup/singup.component';
 import { EstudianteComponent } from './components/estudiante/estudiante.component';
 
-
+import { InterseptorService } from './services/interseptor.service';
 import { AuthGuard } from './auth.guard';
-import { TokenInterceptorService } from './interseptor.guard';
 import { TecnologiasComponent } from './components/tecnologias/tecnologias.component';
 import { InformacionComponent } from './components/informacion/informacion.component';
 
@@ -42,7 +41,7 @@ import { InformacionComponent } from './components/informacion/informacion.compo
     AuthGuard,
     {
       provide: HTTP_INTERCEPTORS,
-      useClass: TokenInterceptorService,
+      useClass: InterseptorService,
       multi: true
     }
   ],

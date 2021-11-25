@@ -24,9 +24,11 @@ export class SinginComponent implements OnInit {
     this.authService.singIn(this.user)
     .subscribe( 
       res =>{
-        console.log(res)
-        localStorage.setItem('token',res.token)
-        this.router.navigate(['/estudiante'])
+        if (res.token){
+          localStorage.setItem('token',res.token)
+          this.router.navigate(['/estudiante'])
+        }
+        
       }
      
     )
