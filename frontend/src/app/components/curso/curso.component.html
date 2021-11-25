@@ -1,1 +1,30 @@
-cursos
+
+<div class="peliculas-recomendadas container">
+    <div class="contenedor-titulo-controles titulo">
+        <h2>Todos los cursos para ti</h2>
+        <div class="indicadores"></div>
+    </div>
+        <div class="contenedor-principal">
+            <button role="button" id="flecha-izquierda" (click)="scrollLef(contenedorcarousel)" class="flecha-izquierda"><i class="fas fa-angle-left"></i></button>
+
+            <div class="contenedor-carousel" #contenedorcarousel>
+                <div class="carousel">
+                    
+                    <div class="d-flex">
+                        <div class="card col-md-4 " *ngFor="let curso of cursosService.Cursos" style="width: 18rem;">
+                        <img src="https://static.platzi.com/media/blog/meancover-0e4b0e4d-de65-4761-8641-e0ae3226fe3f.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                        <h3>{{curso.name}}</h3>
+                        <h6>{{curso.categoria}}</h6>
+                        <h6>{{curso.autor}}</h6>
+                        <button class="btn btn-primary" style="">Agregar</button>
+                        </div>
+                    </div>
+                    </div>
+
+                </div>
+            </div>
+            <button role="button" id="flecha-derecha"(click)="scrollRigt(contenedorcarousel)" class="flecha-derecha"><i class="fas fa-angle-right"></i></button>
+
+        </div>
+</div>

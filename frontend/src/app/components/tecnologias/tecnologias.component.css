@@ -1,0 +1,26 @@
+
+.aprende{
+    width: 30%;
+    min-height: 300px;
+    border-radius: 0% 50% 50% 0%;
+    background-color:cyan;
+    text-align: center;
+    color:blue;
+    
+}
+h3{
+    background-color:cyan;
+    border-radius: 50%;
+    
+}
+
+.tecnologias{
+    background-color: blue;
+    min-width: 100%;
+    min-height: 300px;
+}
+
+.titulo{
+    text-align: center;
+    padding: 3rem;
+}

@@ -15,6 +15,8 @@ import { EstudianteComponent } from './components/estudiante/estudiante.componen
 
 import { AuthGuard } from './auth.guard';
 import { TokenInterceptorService } from './interseptor.guard';
+import { TecnologiasComponent } from './components/tecnologias/tecnologias.component';
+import { InformacionComponent } from './components/informacion/informacion.component';
 
 
 @NgModule({
@@ -26,6 +28,8 @@ import { TokenInterceptorService } from './interseptor.guard';
     SinginComponent,
     SingupComponent,
     EstudianteComponent,
+    TecnologiasComponent,
+    InformacionComponent,
  
   ],
   imports: [

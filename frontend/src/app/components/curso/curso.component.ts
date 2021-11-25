@@ -10,7 +10,7 @@ export class CursoComponent implements OnInit {
 
   
   constructor(
-    private cursosService : CursosService
+    public cursosService : CursosService
   ) { }
 
   ngOnInit(): void {
@@ -18,9 +18,15 @@ export class CursoComponent implements OnInit {
     .subscribe(
       res => {
         this.cursosService.Cursos = res;
-        console.log(res)
       }
     )
+  }
+
+  scrollLef(contenedorcarousel:any){
+    contenedorcarousel.scrollLeft -=  contenedorcarousel.offsetWidth
+  }
+  scrollRigt(contenedorcarousel:any){
+    contenedorcarousel.scrollLeft +=  contenedorcarousel.offsetWidth
   }
 
 }
