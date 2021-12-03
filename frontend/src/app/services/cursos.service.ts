@@ -18,7 +18,12 @@ export class CursosService {
   getCursos(){
     return this.httpClient.get<cursos[]>(this.URL + '/cursos')
   }
-  getCursosUsuario(){
-    return this.httpClient.get<cursos[]>(this.URL + '/cursosUsuarios')
+  getCursosUsuario(autor: any){
+    return this.httpClient.get<cursos[]>(this.URL + '/autor/'+autor)
   }
+  postCrearCurso(curso : any){
+    return this.httpClient.post<cursos[]>(this.URL+'/cursos',curso)
+  }
+
+
 }

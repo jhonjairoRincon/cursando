@@ -26,7 +26,7 @@ export class AuthService {
   }
 
   loggedIn(){
-    
+      
       return localStorage.getItem('token')  
     }
   getToken(){
@@ -34,7 +34,13 @@ export class AuthService {
   }
   logout(){
     localStorage.removeItem('token')
+    localStorage.removeItem('id')
     this.router.navigate(['/singIn'])
+
+  }
+  getUserLogged(){
+    const token = this.getToken
+    this.router.navigate(['/user'])
   }
   
 }

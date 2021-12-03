@@ -18,7 +18,8 @@ const userSchema = new Schema({
         ref: 'Rol',
         type: Schema.Types.ObjectId,
 
-    }]
+    }],
+    cursos:''
     
 
 },{

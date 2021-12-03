@@ -1,10 +1,10 @@
+import { userSingUp } from "./userSingUp";
+
 export interface cursos {
-      email: String,
-      password: String,
-      _id: String,
+      id:String,
       name: String,
       categoria: String,
-      autor: String,
+      autor: userSingUp,
       createdAt: String,
       updatedAt: String
 }

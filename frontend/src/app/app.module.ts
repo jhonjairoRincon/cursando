@@ -12,10 +12,12 @@ import { SinginComponent } from './components/singin/singin.component';
 import { SingupComponent } from './components/singup/singup.component';
 import { EstudianteComponent } from './components/estudiante/estudiante.component';
 
+
 import { InterseptorService } from './services/interseptor.service';
 import { AuthGuard } from './auth.guard';
 import { TecnologiasComponent } from './components/tecnologias/tecnologias.component';
 import { InformacionComponent } from './components/informacion/informacion.component';
+import { InstructorComponent } from './components/instructor/instructor.component';
 
 
 @NgModule({
@@ -29,6 +31,7 @@ import { InformacionComponent } from './components/informacion/informacion.compo
     EstudianteComponent,
     TecnologiasComponent,
     InformacionComponent,
+    InstructorComponent,
  
   ],
   imports: [

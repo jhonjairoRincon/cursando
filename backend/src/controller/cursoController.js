@@ -28,13 +28,14 @@ cursos.ActualizarCurso = async(req,res)=>{
 //aliminar
 cursos.EliminarCurso = async (req,res)=>{
     curso.findByIdAndDelete(req.params.id)
+
     res.json({status: 'curso eliminado'})
 };
+//listar por autor
+cursos.listarAutor = async(req,res) =>{
+   const cursoAutor = await curso.find({autor:req.params.autor})
+    res.json(cursoAutor)
 
-//agregar cursos
-
-cursos.agregarcurso = async (req,res) =>{
-    
 }
 
 

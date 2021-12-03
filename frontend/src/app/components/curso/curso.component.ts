@@ -20,6 +20,7 @@ export class CursoComponent implements OnInit {
         this.cursosService.Cursos = res;
       }
     )
+
   }
 
   scrollLef(contenedorcarousel:any){

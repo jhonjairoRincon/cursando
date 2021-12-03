@@ -25,8 +25,15 @@ export class SinginComponent implements OnInit {
     .subscribe( 
       res =>{
         if (res.token){
+        
           localStorage.setItem('token',res.token)
-          this.router.navigate(['/estudiante'])
+          localStorage.setItem('id',res.id)
+          if(res.roles == 'estudiante'){
+            this.router.navigate(['/estudiante'])
+          }else{
+            this.router.navigate(['/instructor'])
+          }
+        
         }
         
       }

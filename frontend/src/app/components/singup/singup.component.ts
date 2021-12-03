@@ -13,7 +13,8 @@ export class SingupComponent implements OnInit {
     username:"",
     email:"",
     password:"",
-    roles: ""
+    roles: "",
+    cursos:''
 
   }
   constructor(
@@ -27,9 +28,19 @@ export class SingupComponent implements OnInit {
     this.authService.singUp(this.user)
     .subscribe( 
       res =>{
-        console.log(res)
+       
         localStorage.setItem('token',res.token)
-        this.router.navigate(['/estudiante'])
+        localStorage.setItem('token',res.token)
+        localStorage.setItem('id',res.id)
+        if(this.user.roles == 'estudiante'){
+           this.router.navigate(['/estudiante'])
+        }else if(this.user.roles == 'instructor'){
+          this.router.navigate(['/instructor'])
+        }else{
+          alert('tu rol debe ser estudiante o instructor')
+          this.router.navigate(['/singUp'])
+        }
+      
       }
      
     )

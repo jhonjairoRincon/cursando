@@ -1,0 +1,40 @@
+<div class="container">
+    <h2>Mis cursos</h2>
+    <div class="d-flex">
+        <div class="card col-md-4 "  style="width: 18rem;">
+                <img src="https://static.platzi.com/media/blog/meancover-0e4b0e4d-de65-4761-8641-e0ae3226fe3f.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <!-- <h3>{{curso.name}}</h3>
+                <h6>{{curso.categoria}}</h6>
+                <h6>{{curso.autor}}</h6> -->
+                <button class="btn btn-success m-3" style="">Actualizar</button>
+                <button class="btn btn-danger" style="">Eliminar</button>
+
+            </div>
+        </div>
+    </div>
+    
+</div>
+<div class="row">
+    <div class="col-md-4 mx-auto">
+        <div class="card">
+            <div class="card-header">
+                Crear Curso
+            </div>
+            <div class="card-body">
+                <form (submit)="crearCurso()">
+                    <div class="form-group">
+                        <input type="text" [(ngModel)]="cursos.name" name="name" class="form-control mb-2" placeholder="name" required autofocus>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" [(ngModel)]="cursos.categoria" name="categoria" class="form-control mb-2" placeholder="categoria" required autofocus>
+                    </div>
+                    
+                    <button class="btn btn-primary btn-block">
+                        Crear
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
